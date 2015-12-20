@@ -1,0 +1,10 @@
+clone_depth: 1
+configuration: Release
+before_build:
+  - ps: $env:DNX_BUILD_VERSION = $env:APPVEYOR_BUILD_NUMBER
+build_script:
+  - build.cmd
+artifacts:
+  - path: artifacts\build\*.nupkg
+test: off
+deploy: off
