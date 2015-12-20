@@ -102,8 +102,12 @@ namespace TileCook.MBTiles
             {
                 throw new ArgumentException("TileInfo is invalid", "tileinfo");
             }
+            if (tileinfo.Scheme != TileScheme.Tms)
+            {
+                throw new ArgumentException("Scheme must be Tms", "tileinfo");
+            }            
             Info = tileinfo.DeepClone();
-            
+
             // write tileinfo to metadata table
             using (var connection = new SqliteConnection(ConnectionString))
             {
