@@ -76,7 +76,7 @@ namespace TileCook.MBTiles
                                 Info.Bounds = reader.GetString(1).Split(',').Select(x => double.Parse(x)).ToArray();
                                 break;
                             case "center":
-                                Info.Bounds = reader.GetString(1).Split(',').Select(x => double.Parse(x)).ToArray();
+                                Info.Center = reader.GetString(1).Split(',').Select(x => double.Parse(x)).ToArray();
                                 break;
                             case "json":
                             {
